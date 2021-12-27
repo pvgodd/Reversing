@@ -10,7 +10,7 @@
 
 ---
 
-![image-20211228003110638](C:\Users\sosou\AppData\Roaming\Typora\typora-user-images\image-20211228003110638.png)
+![CPU](https://i.postimg.cc/d1yzJkF2/CPU.png)
 
 
 
@@ -66,13 +66,13 @@ CPU와 연결되어 있어서 연산속도가 빠른 고속메모리라고 불�
 
 
 
-![image-20211228003207680](C:\Users\sosou\AppData\Roaming\Typora\typora-user-images\image-20211228003207680.png)
+![EAX](https://i.postimg.cc/zXj4DYsc/Register.png)
 
 ​									상수 /주소 등을 주로 저장할때 사용. 크기 = 32bit(4byte)
 
 ---
 
-​	![image-20211228003914384](C:\Users\sosou\AppData\Roaming\Typora\typora-user-images\image-20211228003914384.png){: .aligncenter}
+![AX](https://i.postimg.cc/jdZk0QNV/EAX.png)
 
 32bit 모두 사용시 – EAX /EBX /ECX /EDX
 
@@ -110,7 +110,7 @@ CPU와 연결되어 있어서 연산속도가 빠른 고속메모리라고 불�
 
  - 루프문(Loop) 수행할때 카운팅 하는 역할
  ECX에 양수값을 넣고, 감소시키며 카운터가 0이 될 때까지 루프를 돈다.
-  카운팅 할 필요가 없을 때는 변수로 사용한다.
+    카운팅 할 필요가 없을 때는 변수로 사용한다.
 
 ---
 
