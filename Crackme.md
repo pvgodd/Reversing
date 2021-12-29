@@ -5,6 +5,38 @@ abexcm1.exe 파일을 이용하여 리버싱 분석을 한다.
 
 ---
 
+###### C언어 코드 복구
+
+```c
+#include<stdio.h>
+#include<Windows.h>
+int main()
+{ 
+    int eax = 0;
+    int esi = 0; 
+    MessageBoxA(NULL, "Make me think your HD is a CD-Rom", "abex' 1st crackme", MB_OK);
+    
+    eax = GetDriveTypeA("C:\\");
+    esi++; 
+    eax--; 
+    esi++; 
+    esi++; 
+    eax--; 
+    
+    if (eax == esi) 
+    { 
+        MessageBoxA(NULL, "Ok, I really think that your HD is a CD-ROM! :p", "YEAH!", MB_OK); 
+    } 
+    else 
+    { 
+        MessageBoxA(NULL, "Nah... This is not a CD-ROM Drive!", "Error", MB_OK); 
+    } 
+    return 0; 
+}
+```
+
+
+
 ###### Main Srceen
 
 ![crackmain](https://i.postimg.cc/7L9J4X9r/crackmain.png)
@@ -38,6 +70,20 @@ ESI가 401000 으로 EP 이다.  첫번째 MessageBoxA의 안에서 ESI = FFFFFF
 GetDriveType 의 함수가 끝나면서 EAX 값이 3이 된 것을 볼 수 있다.
 
 EAX 값이 3인 이유는 드라이브의 고정된 미디어가 있으므로 함수의 반환 값이 3이 되었다.(RootPathName = "c:\\")
+
+> GetDriveType 반환 값
+
+| **GetDriveType**        |                          **반환값**                          |
+| ----------------------- | :----------------------------------------------------------: |
+| **DRIVE_UNKNOWN 0**     |             드라이브 유형을 확인할 수 없습니다.              |
+| **DRIVE_NO_ROOT_DIR 1** | 루트 경로가 잘못되었습니다. 예를 들어 지정된 경로에 마운트된 볼륨이 없습니다. |
+| **DRIVE_REMOVABLE 2**   | 드라이브에 이동식 미디어가 있습니다. 예를 들어, 플로피 드라이브, 썸 드라이브 또는 플래시 카드 판독기입니다. |
+| **DRIVE_FIXED 3**       | 드라이브에 고정 미디어가 있습니다. 예를 들어, 하드 디스크 드라이브 또는 플래시 드라이브. |
+| **DRIVE_REMOTE 4**      |          드라이브가 원격(네트워크) 드라이브입니다.           |
+| **DRIVE_CDROM 5**       |              드라이브는 CD-ROM 드라이브입니다.               |
+| **DRIVE_RAMDISK 6**     |                 드라이브는 RAM 디스크입니다.                 |
+
+
 
 ---
 
@@ -123,6 +169,12 @@ EAX = ESI 이므로 CMP 명령어에서 ZF = 1 이므로 JE 명령어에서 true
 
 
 
+
+
 > 참고사이트
 >
 > [Crackme](https://blog.naver.com/hungjaksm/40201096800)
+>
+> [GetDriveType](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getdrivetypea)
+>
+> [c언어 코드 복구](https://ccurity.tistory.com/186)
