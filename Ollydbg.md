@@ -1,6 +1,6 @@
 ## Ollydbg
 
-[![main-main.png](https://i.postimg.cc/9Q7x6zB7/main-main.png)](https://postimg.cc/XrncFjmj)
+[![main-main.png](https://raw.githubusercontent.com/sosouni14/image_server/main/image_rev/main-main.png)](https://postimg.cc/XrncFjmj)
 
 **1. Code Window** : 각종 커멘트 및 레이블을 보여주며, 코드를 분석하여 loop, jump 위치 등의 정보 표시를 한다.
 
@@ -14,7 +14,7 @@
 
 ---
 
-[![maincode.png](https://i.postimg.cc/t4W5rwXd/maincode.png)](https://postimg.cc/5X9LyPQj)
+[![maincode.png](https://raw.githubusercontent.com/sosouni14/image_server/main/image_rev/maincode.png)](https://postimg.cc/5X9LyPQj)
 
 **004011A0 - Address** : 프로세스 가상 메모리 내의 주소
 
@@ -54,7 +54,7 @@
 
 ---
 
-[![mainwin32.png](https://i.postimg.cc/5NxgPnXD/mainwin32.png)](https://postimg.cc/3Wc2NjCZ)
+[![mainwin32.png](https://raw.githubusercontent.com/sosouni14/image_server/main/image_rev/mainwin32.png)](https://postimg.cc/3Wc2NjCZ)
 
 빨간색 글씨는 코드에서 호출되는 API 함수 이름이다.
 
@@ -92,7 +92,7 @@ argv 의 값 4개. 4개의 값을 가지고 있는 문자열 배열이다.
 
 
 
-[![mainwin32.png](https://i.postimg.cc/5NxgPnXD/mainwin32.png)](https://postimg.cc/3Wc2NjCZ)
+![mainwin32](https://raw.githubusercontent.com/sosouni14/image_server/main/image_rev/mainwin32.PNG)
 
 **4010E4** : 주소에 들어갈 시 Win32 API 호출 코드로 내부로 들어가게 되면 반복문이 존재해서 함수 탈출까지 오랜시간이 걸린다.
 
@@ -114,7 +114,7 @@ argv 의 값 4개. 4개의 값을 가지고 있는 문자열 배열이다.
 
 ---
 
-[![main64bit.png](https://i.postimg.cc/cHrnrkLt/main64bit.png)](https://postimg.cc/k6P4Hc87)
+[![main64bit.png](https://raw.githubusercontent.com/sosouni14/image_server/main/image_rev/main64bit.png)](https://postimg.cc/k6P4Hc87)
 
 **4010EE** : 32bit Ollydbg 사용하면서 64bit 환경에서 이용시 버그로 인하여 멈춤 현상이 생긴다.
 
@@ -141,3 +141,5 @@ argv 의 값 4개. 4개의 값을 가지고 있는 문자열 배열이다.
 > [arg](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=assortrockp&logNo=220671347945)
 >
 > [stdcall](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=work1989&logNo=221275066623)
+
+> 작성날짜 010222
