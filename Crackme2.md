@@ -86,13 +86,27 @@ MessageBox를찾기가 힘들기 때문에 간단한 방법으로 MessageBox를 
 
 ![teje](https://raw.githubusercontent.com/sosouni14/image_server/main/image_rev/teje.PNG)
 
-`Push EDX` 와 `Push EAX` 을 보면 리턴값 EDX 와 EAX를 비교한다는 것을 알 수 있다.
+**403329** 까지 실행하고 Name 과 Serial 을 넣는다. 
 
-이후 403329 까지 실행하고 Name 과 Serial 을 넣는다. 
+`vbaVarTstEq 암호를 검사하는 함수`
+
+**40332F** TEST 는 AX가 0 이면 ZF == 1 로 만든다. ZF가 1일 경우 점프를 하고 0일 경우 점프를 하지 않는다. 
+
+하지만 Name - aaaa, Serial - aaaa 를 넣었을 때 점프를 하였다. 결국 AX는 0인 걸 예측 할 수 있다.
+
+> `TEST opr1 opr2`
+>
+> 기능: 두 피연산자 사이에 논리적인 AND 연산을 수행하여 ZERO 플래그에 영향을 주지만 결과값을 **저장하지 않는다.**
+>
+> opr1 과 opr2 의 값이 0인지 아닌지 확인을 한다.
+
+**403332** 에서 조건 분기 부분인 JE 명령어가 있다.  Name - aaaa, Serial - aaaa 를 넣었을 때 점프를 **403408** 하였다. 결국 AX는 0인 걸 예측 할 수 있다.
+
+---
 
 ![teregi](https://raw.githubusercontent.com/sosouni14/image_server/main/image_rev/teregi.PNG)
 
-레지스터 부분을 보면 EAX - 19F1BC 와 EDX - 19F1AC 인 것을 확인한다.
+실행 후 레지스터 부분을 보면 EAX - 19F1BC 와 EDX - 19F1AC 인 것을 확인한다.
 
 이 부분이 무엇을 담고 있는지 덤프창에서 확인 할 수 있다.
 
@@ -122,3 +136,8 @@ Name 과 Serial 에 입력한 값들이 보인다.
 >
 > [간접호출](https://mm0ck3r.blog/46)
 
+
+
+> 작성일
+>
+> 01/06/2022
